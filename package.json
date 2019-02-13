@@ -29,6 +29,7 @@
   "dependencies": {
     "next-camelize": "github:afeiship/next-camelize",
     "next-css-text": "github:afeiship/next-css-text",
+    "next-dasherize": "github:afeiship/next-dasherize",
     "next-js-core2": "github:afeiship/next-js-core2"
   }
 }
