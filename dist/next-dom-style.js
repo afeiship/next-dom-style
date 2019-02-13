@@ -9,10 +9,11 @@
     statics: {
       set: function(inElement, inName, inValue) {
         var result = '';
+        var _key = nxDasherize(inName);
         if (!value && value !== 0) {
-          inElement.style.removeProperty(nxDasherize(inName));
+          inElement.style.removeProperty(_key);
         } else {
-          result = nxDasherize(inName) + ':' + inValue;
+          result = _key + ':' + inValue;
         }
         inElement.style.cssText += ';' + result;
       },
@@ -24,11 +25,13 @@
       },
       sets: function(inElement, inObject) {
         var result = '';
+        var _key;
         nx.forIn(inObject, function(key, value) {
+          _key = nxDasherize(key);
           if (!value && value !== 0) {
-            inElement.style.removeProperty(nxDasherize(key));
+            inElement.style.removeProperty(_key);
           } else {
-            result += nxDasherize(key) + ':' + inValue;
+            result += _key + ':' + inValue;
           }
         });
         inElement.style.cssText += ';' + result;
